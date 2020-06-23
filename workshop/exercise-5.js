@@ -8,9 +8,18 @@ const foodPairings = {
   strawberries: 'cream',
 };
 
-const getValue = () => {
-  // do something
+const getValue = (obj, key) => {
+  // Create new array of keys
+  let keysArr = Object.keys(obj);
+  // Only return value if key exists
+  if (keysArr.includes(key)) {
+    return obj[key];
+  } else {
+    return 'not available';
+  }
 };
+
+getValue(foodPairings, 'burgers');
 
 expect(getValue(foodPairings, 'burgers'), 'beer');
 expect(getValue(foodPairings, 'beef'), 'red wine');

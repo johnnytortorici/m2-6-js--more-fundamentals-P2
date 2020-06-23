@@ -50,5 +50,12 @@ const staffMembers = [
 ];
 
 const getData = (arr, key) => {
-  // return something
+  // Return a new array of values when key passed exists in object
+  return arr.map((obj) => {
+    return obj[key];
+  });
 };
+
+console.log(getData(staffMembers, 'name'));
+console.log(getData(staffMembers, 'title'));
+console.log(getData(staffMembers, 'skillLevels'));
